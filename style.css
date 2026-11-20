@@ -270,3 +270,38 @@ fieldset{
   display: block;
   letter-spacing: 0;
 }
+input:focus {
+  border-color: hsl(77, 98%, 59%);
+  outline: 2px solid hsl(77, 98%, 59%);
+  outline-offset: 2px;
+  box-shadow: 0 0 12px rgba(198, 255, 26, 0.15);
+}
+
+.toggle-password-btn:focus-visible {
+  border-color: hsl(77, 98%, 59%);
+  outline: 2px solid hsl(77, 98%, 59%);
+  outline-offset: 1px;
+}
+
+.terms-checkbox:focus-visible + .custom-box {
+  border-color: hsl(77, 98%, 59%);
+  outline: 2px solid hsl(77, 98%, 59%);
+  outline-offset: 2px;
+}
+
+.cyber-link {
+  padding: 2px 4px;
+  margin: 0 -4px;
+}
+
+.cyber-link:focus-visible {
+  color: hsl(77, 98%, 59%);
+  outline: 2px solid hsl(77, 98%, 59%);
+  outline-offset: 2px;
+}
+
+.submit-btn:focus-visible {
+  outline: 2px solid hsl(77, 98%, 59%);
+  outline-offset: 3px;
+  box-shadow: 0 0 16px rgba(198, 255, 26, 0.25);
+}
