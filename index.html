@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Orbitron:wght@400..900&display=swap"
+    rel="stylesheet">
+  <title>Frontend Mentor | Gamer sign-up form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <figure class="backdrop">
+    <img src="./assets/images/pattern-backdrop.svg" alt="pattern-backdrop">
+  </figure>
+  <main>
+    <section>
+      <figure>
+        <img src="./assets/images/logo.svg" alt="">
+      </figure>
+      <div>
+        <h1><span>//</span>JOIN THE NEXUS</h1>
+        <p class="neon">INITIALIZE YOUR NEONCORE IDENTITY</p>
+      </div>
+
+      <div class="statandreq">
+        <hr>
+        <p class="op">OPERATOR ID <span>0/5 READY</span></p>
+        <h2>NeonRaider_99</h2>
+        <div class="requirement">
+          <p>callsign</p>
+          <div class="lines"></div> <span class="status">pending</span>
+        </div>
+        <div class="requirement">
+          <p>email</p>
+          <div class="lines"></div> <span class="status">pending</span>
+        </div>
+        <div class="requirement">
+          <p>password</p>
+          <div class="lines"></div> <span class="status">pending</span>
+        </div>
+        <div class="requirement">
+          <p>confirm</p>
+          <div class="lines"></div> <span class="status">pending</span>
+        </div>
+        <div class="requirement">
+          <p>terms</p>
+          <div class="lines"></div> <span class="status">required</span>
+        </div>
+      </div>
+    </section>
+    <form action="">
+      <p>new operator <span>ALL FIELDS REQUIRED</span></p>
+      <hr>
+      <fieldset>
+        <div>
+          <label for="callsign"><span>></span> CALLSIGN</label><br>
+          <input type="text" id="callsign" name="callsign" placeholder="e.g. Vortex_07"><br>
+          <label for="callsignreq">3-20 characters: letters, numbers, _ or -</label><br>
+        </div>
+
+        <div>
+          <label for="email"><span>></span> EMAIL</label><br>
+          <input type="email" id="email" name="email" placeholder="you@example.com">
+        </div>
+
+        <div>
+          <label for="password"><span>></span> PASSWORD</label><br>
+          <input type="password" id="password" name="password">
+          <div class="pass-levels">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <label for="password">At least 8 characters</label>
+        </div>
+        <div>
+          <label for="confirm-password"><span>></span> CONFIRM PASSWORD</label><br>
+          <input type="password" id="confirm-password" name="confirm-password">
+        </div>
+        <div class="form-footer">
+          <label class="terms-label">
+            <input type="checkbox" class="terms-checkbox" required />
+            <span class="custom-box"></span>
+            <span>
+              I accept the <a href="#terms" class="cyber-link">Terms</a> and <a href="#privacy"
+                class="cyber-link">Privacy Policy</a>.
+            </span>
+          </label>
+          <button type="submit" class="submit-btn">INITIALIZE ACCOUNT</button>
+          <p class="login-prompt">
+            Already an operator? <a href="#login" class="cyber-link">Log in</a>
+          </p>
+        </div>
+      </fieldset>
+    </form>
+  </main>
+</body>
+
+</html>
