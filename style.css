@@ -26,10 +26,10 @@ body {
 }
 main {
   display: flex;
-  gap: 70px;
+  gap: 100px;
   width: 100%;
   height: 100%;
-  margin: 50px 100px 50px 140px;
+  margin: 50px 100px 50px 120px;
 }
 section {
   display: flex;
@@ -60,7 +60,7 @@ form::after {
   position: absolute;
   width: 24px;
   height: 24px;
-  pointer-events: none; 
+  pointer-events: none;
 }
 form::before {
   top: -1px;
@@ -75,21 +75,23 @@ form::after {
   border-bottom: 2px solid hsl(77 90% 59%);
   border-right: 2px solid hsl(77 90% 59%);
 }
-form p{
-    font-size: 12px;
-    color: hsl(204 60% 97%);
-    display: flex;
-    justify-content: space-between;
+form p {
+  font-size: 12px;
+  color: hsl(204 60% 97%);
+  display: flex;
+  justify-content: space-between;
 }
-form p span{
-    color: hsl(211 13% 55%);
+form p span {
+  color: hsl(211 13% 55%);
 }
-form hr{
-    background-color: hsl(211 13% 55%);
-    margin: 15px 0;
+form hr {
+  background-color: hsl(211 13% 55%);
+  margin: 15px 0;
 }
 h2 {
   font-family: "Orbitron", sans-serif;
+  color: hsl(210 18% 42%);
+  text-transform: uppercase;
 }
 p {
   font-weight: 400;
@@ -103,13 +105,22 @@ p {
   font-size: 12px;
   margin-top: 10px;
 }
-.op span{
-    color: hsl(210 18% 42%);
+.op span {
+  color: hsl(210 18% 42%);
 }
 .status {
   text-transform: uppercase;
   color: hsl(210 18% 42%);
   letter-spacing: 0.16em;
+  font-size: 12px;
+  /* width: 15px; */
+}
+.callsignwarn{
+  display: flex;
+  align-items: center;
+}
+.callsignwarn img{
+  margin-right: 2px;
 }
 .lines {
   height: 1px;
@@ -137,43 +148,49 @@ hr {
   height: 1px;
   background-color: hsl(211 13% 55%);
 }
-label{
-    font-size: 12px;
-    color: hsl(211 13% 55%);
+label {
+  font-size: 12px;
+  color: hsl(211 13% 55%);
 }
-label span{
-    color: hsl(77 90% 59%);
+label span {
+  color: hsl(77 90% 59%);
 }
-input{
-    width: 100%;
-    height: 50px;
-    padding: 10px;
-    color: hsl(211 13% 55%);
-    margin-top: 10px;
+input {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  color: hsl(211 13% 55%);
+  margin-top: 10px;
+  background-color: hsl(214 37% 4%);
+  border: 1px solid hsl(210 18% 42%);
 }
-fieldset{
-    display: flex;
-    flex-direction: column;
-    border: none;
-    justify-content: space-evenly;
-    height: 94%;
+input:hover{
+  border: 1px solid hsl(208 49% 92%);
+  transition: 1s ease;
 }
-.pass-levels{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  justify-content: space-evenly;
+  height: 94%;
 }
-.pass-levels div{
-    width: 24%;
-    height: 3px;
-    background-color: hsl(211 22% 24%);
-    margin-top: 5px;
+.pass-levels {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.pass-levels div {
+  width: 24%;
+  height: 3px;
+  background-color: hsl(211 22% 24%);
+  margin-top: 5px;
 }
 .form-footer {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   background-color: hsl(210 39% 7%);
   padding: 16px 0;
   color: hsl(211 13% 55%);
@@ -193,7 +210,9 @@ fieldset{
   width: 0;
   height: 0;
 }
-
+.agree {
+  color: hsl(211 18% 68%);
+}
 .custom-box {
   width: 18px;
   height: 18px;
@@ -202,11 +221,13 @@ fieldset{
   flex-shrink: 0;
   display: grid;
   place-content: center;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .terms-label:hover .custom-box {
-  border-color: hsl(77 90% 59%);
+  border-color: hsl(204 60% 97%);
 }
 
 .terms-checkbox:checked + .custom-box {
@@ -237,7 +258,7 @@ fieldset{
 }
 
 .cyber-link:hover {
-  color: hsl(77 90% 59%);
+  color: hsl(204 60% 97%);
 }
 .submit-btn {
   width: 100%;
@@ -251,11 +272,14 @@ fieldset{
   letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background-color 0.15s ease, transform 0.1s ease;
+  transition:
+    background-color 0.15s ease,
+    transform 0.1s ease;
 }
 
 .submit-btn:hover {
-  background-color: hsl(74, 100%, 65%);
+  background-color: hsl(204 60% 97%);
+  outline: 2px solid hsl(77 90% 59%);
 }
 
 .submit-btn:active {
@@ -276,13 +300,6 @@ input:focus {
   outline-offset: 2px;
   box-shadow: 0 0 12px rgba(198, 255, 26, 0.15);
 }
-
-.toggle-password-btn:focus-visible {
-  border-color: hsl(77, 98%, 59%);
-  outline: 2px solid hsl(77, 98%, 59%);
-  outline-offset: 1px;
-}
-
 .terms-checkbox:focus-visible + .custom-box {
   border-color: hsl(77, 98%, 59%);
   outline: 2px solid hsl(77, 98%, 59%);
@@ -304,4 +321,38 @@ input:focus {
   outline: 2px solid hsl(77, 98%, 59%);
   outline-offset: 3px;
   box-shadow: 0 0 16px rgba(198, 255, 26, 0.25);
+}
+.pass {
+  position: relative;
+}
+.eye,
+.eye-conf {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  background-color: inherit;
+  right: 3%;
+  border: none;
+}
+.eye {
+  top: 43%;
+  width: 20px;
+  height: 20px;
+}
+.eye-conf {
+  top: 56%;
+}
+.eye img {
+  width: 100%;
+  height: 100%;
+}
+#emailwarn{
+  display: none;
+  gap: 5px;
+  color: hsl(4 100% 74%);
+  margin-top: 10px;
 }

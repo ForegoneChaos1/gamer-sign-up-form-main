@@ -31,26 +31,26 @@
       <div class="statandreq">
         <hr>
         <p class="op">OPERATOR ID <span>0/5 READY</span></p>
-        <h2>UNASSIGNED</h2>
+        <h2 class="opname">UNASSIGNED</h2>
         <div class="requirement">
           <p>callsign</p>
-          <div class="lines"></div> <span class="status">pending</span>
+          <div class="lines callline"></div> <span class="status user">pending</span>
         </div>
         <div class="requirement">
           <p>email</p>
-          <div class="lines"></div> <span class="status">pending</span>
+          <div class="lines"></div> <span class="status mail">pending</span>
         </div>
         <div class="requirement">
           <p>password</p>
-          <div class="lines"></div> <span class="status">pending</span>
+          <div class="lines"></div> <span class="status passw">pending</span>
         </div>
         <div class="requirement">
           <p>confirm</p>
-          <div class="lines"></div> <span class="status">pending</span>
+          <div class="lines"></div> <span class="status confpassw">pending</span>
         </div>
         <div class="requirement">
           <p>terms</p>
-          <div class="lines"></div> <span class="status">required</span>
+          <div class="lines"></div> <span class="status term">required</span>
         </div>
       </div>
     </section>
@@ -58,37 +58,44 @@
       <p>new operator <span>ALL FIELDS REQUIRED</span></p>
       <hr>
       <fieldset>
-        <div>
+        <div >
           <label for="callsign"><span>></span> CALLSIGN</label><br>
           <input type="text" id="callsign" name="callsign" placeholder="e.g. Vortex_07"><br>
-          <label for="callsignreq">3-20 characters: letters, numbers, _ or -</label><br>
+          <label for="callsignreq" class="callsignwarn">3-20 characters: letters, numbers, _ or -</label><br>
         </div>
 
         <div>
           <label for="email"><span>></span> EMAIL</label><br>
           <input type="email" id="email" name="email" placeholder="you@example.com">
+          <label for="email" id="emailwarn"><img src="./assets/images/icon-alert.svg" alt=""> Enter a valid email, like you@example.com</label>
         </div>
 
-        <div>
+        <div class="pass">
           <label for="password"><span>></span> PASSWORD</label><br>
           <input type="password" id="password" name="password">
+          <button type="button" class="eye" onclick="myFunction()">
+            <img src="./assets/images/icon-eye.svg" data-alt-src="./assets/images/icon-eye-off.svg" alt="" />
+          </button>
           <div class="pass-levels">
             <div></div>
             <div></div>
             <div></div>
             <div></div>
-          </div>
+          </div>  
           <label for="password">At least 8 characters</label>
         </div>
-        <div>
+        <div class="pass">
           <label for="confirm-password"><span>></span> CONFIRM PASSWORD</label><br>
           <input type="password" id="confirm-password" name="confirm-password">
+          <button type="button" class="eye-conf" onclick="myFunctionConf()">
+            <img src="./assets/images/icon-eye.svg" data-alt-src="./assets/images/icon-eye-off.svg" alt="" />
+          </button>
         </div>
         <div class="form-footer">
           <label class="terms-label">
             <input type="checkbox" class="terms-checkbox" required />
             <span class="custom-box"></span>
-            <span>
+            <span class="agree">
               I accept the <a href="#terms" class="cyber-link">Terms</a> and <a href="#privacy"
                 class="cyber-link">Privacy Policy</a>.
             </span>
@@ -101,6 +108,7 @@
       </fieldset>
     </form>
   </main>
+  <script src="./index.js"></script>
 </body>
 
 </html>
