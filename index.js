@@ -36,7 +36,6 @@ const passCheck = document.querySelector(".pass .pass-check");
 const confPassCheck = document.querySelector(".confpass .confpass-check");
 
 const lines = document.querySelector(".lines");
-const stats = document.querySelector(".status");
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
