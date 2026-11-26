@@ -176,15 +176,32 @@ fieldset {
   height: 94%;
 }
 .pass-levels {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+  margin-top: 0.5rem;
 }
+
 .pass-levels div {
-  width: 24%;
-  height: 3px;
-  background-color: hsl(211 22% 24%);
-  margin-top: 5px;
+  height: 4px;
+  background-color: hsl(210 18% 28%);
+  transition: background-color 0.2s ease;
+}
+
+/* Targets only the helper label after .pass-levels, not the top "PASSWORD" label */
+.pass-levels + label[for="password"] {
+  display: inline-block;
+  margin-top: 0.45rem;
+  font-size: 0.78rem;
+  color: hsl(210 18% 42%);
+}
+
+.pass-strength {
+  float: right;
+  margin-top: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 .form-footer {
   display: flex;
@@ -355,4 +372,137 @@ input:focus {
   gap: 5px;
   color: hsl(4 100% 74%);
   margin-top: 10px;
+}
+.requirement .status {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.pass-check {
+  display: none;
+  width: 20px;
+  height: 20px;
+}
+
+.pass-check.is-visible {
+  display: block;
+  position: absolute;
+  right: 42px; /* sits just left of the 30px .eye button */
+  top: 41%;    /* aligns with .eye */
+  z-index: 2;
+}
+
+.confpasswarn,
+.termswarn {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  color: hsl(4 100% 74%);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.confpasswarn.is-visible,
+.termswarn.is-visible {
+  display: flex;
+}
+
+.submit-btn.is-transmitting {
+  background-color: transparent;
+  color: hsl(77 66% 56%);
+  border: 1px solid hsl(77 66% 56%);
+  cursor: default;
+}
+
+.handshake-complete[hidden] {
+  display: none;
+}
+
+.handshake-complete {
+  background-color: hsl(214 45% 8%);
+  border: 1px solid hsl(214 25% 18%);
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  height: 89%;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.handshake-complete::before,
+.handshake-complete::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: hsl(77 66% 56%);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.handshake-complete::before {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+}
+
+.handshake-complete::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 2px 2px 0;
+}
+
+.handshake-badge {
+  width: 65px;
+  height: 65px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+.handshake-complete h2 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  color: hsl(204 68% 93%);
+  text-transform: uppercase;
+}
+.handshake-complete h2 span{
+  color: hsl(77 66% 56%);
+}
+.handshake-complete p {
+  margin: 0;
+  color: hsl(211 18% 68%);
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+#provisioned-callsign {
+  color: hsl(77 66% 56%);
+  font-weight: 600;
+}
+
+.continue-btn {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px 18px;
+  background-color: hsl(77 66% 56%);
+  color: hsl(214 57% 6%);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.continue-btn:hover {
+  filter: brightness(1.06);
 }
