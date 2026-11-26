@@ -58,15 +58,17 @@
       <p>new operator <span>ALL FIELDS REQUIRED</span></p>
       <hr>
       <fieldset>
-        <div>
+        <div class="call">
           <label for="callsign"><span>></span> CALLSIGN</label><br>
           <input type="text" id="callsign" name="callsign" placeholder="e.g. Vortex_07" required><br>
+          <img src="./assets/images/icon-tick-20.svg" alt="" class="call-check" />
           <label for="callsignreq" class="callsignwarn">3-20 characters: letters, numbers, _ or -</label><br>
         </div>
 
-        <div>
+        <div class="elecmail">
           <label for="email"><span>></span> EMAIL</label><br>
           <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          <img src="./assets/images/icon-tick-20.svg" alt="" class="email-check" />
           <label for="email" id="emailwarn"><img src="./assets/images/icon-alert.svg" alt=""> Enter a valid email, like
             you@example.com</label>
         </div>

@@ -30,8 +30,10 @@ const passLine = document
   .querySelectorAll(".requirement")[2]
   .querySelector(".lines");
 
+const callCheck = document.querySelector(".call .call-check");
+const emailCheck = document.querySelector(".elecmail .email-check");
 const passCheck = document.querySelector(".pass .pass-check");
-const confPassCheck = document.querySelector(".confpass .confpass-check")
+const confPassCheck = document.querySelector(".confpass .confpass-check");
 
 const lines = document.querySelector(".lines");
 const stats = document.querySelector(".status");
@@ -79,6 +81,7 @@ callSign.addEventListener("input", () => {
     userReq.style.width = "auto";
     callSignWarning.innerHTML = `3-20 characters: letters, numbers, _ or -`;
     callSignWarning.style.color = "hsl(210 18% 42%)";
+    callCheck.classList.add("is-visible");
   } else {
     op.textContent = "UNASSIGNED";
     op.style.color = "hsl(210 18% 42%)";
@@ -88,6 +91,7 @@ callSign.addEventListener("input", () => {
     userReq.style.width = "auto";
     callSignWarning.innerHTML = `<img src="./assets/images/icon-alert.svg">  Use at least 3 characters`;
     callSignWarning.style.color = "hsl(4 100% 74%)";
+    callCheck.classList.remove("is-visible");
   }
   updateReadyCounter()
 });
@@ -100,12 +104,14 @@ mail.addEventListener("input", (event) => {
     lines.style.width = "100%";
     emailReq.style.width = "auto";
     emailWarning.style.display = "none";
+    emailCheck.classList.add("is-visible");
   } else {
     emailReq.textContent = "malformed";
     emailReq.style.color = "hsl(4 100% 74%)";
     lines.style.width = "100%";
     emailReq.style.width = "auto";
     emailWarning.style.display = "flex";
+    emailCheck.classList.remove("is-visible");
   }
   updateReadyCounter()
 });
@@ -296,9 +302,9 @@ function lockStatusRows() {
     readyCountEl.style.color = "hsl(77 66% 56%)";
   }
 
-  statusElements.forEach((el) => {
-    if (!el) return;
-    el.textContent = "LOCKED";
-    el.style.color = "hsl(210 18% 42%)";
+  statusElements.forEach((element) => {
+    if (!element) return;
+    element.textContent = "LOCKED";
+    element.style.color = "hsl(204 60% 97%)";
   });
 }
