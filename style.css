@@ -188,7 +188,6 @@ fieldset {
   transition: background-color 0.2s ease;
 }
 
-/* Targets only the helper label after .pass-levels, not the top "PASSWORD" label */
 .pass-levels + label[for="password"] {
   display: inline-block;
   margin-top: 0.45rem;
@@ -339,7 +338,7 @@ input:focus {
   outline-offset: 3px;
   box-shadow: 0 0 16px rgba(198, 255, 26, 0.25);
 }
-.pass {
+.pass , .confpass{
   position: relative;
 }
 .eye,
@@ -377,17 +376,17 @@ input:focus {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.pass-check {
+.pass-check, .confpass-check {
   display: none;
   width: 20px;
   height: 20px;
 }
 
-.pass-check.is-visible {
+.pass-check.is-visible,  .confpass-check.is-visible{
   display: block;
   position: absolute;
-  right: 42px; /* sits just left of the 30px .eye button */
-  top: 41%;    /* aligns with .eye */
+  right: 42px;
+  top: 41%;
   z-index: 2;
 }
 

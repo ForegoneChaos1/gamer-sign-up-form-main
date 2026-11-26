@@ -29,7 +29,9 @@ const passStrength = document.querySelector(".pass-strength");
 const passLine = document
   .querySelectorAll(".requirement")[2]
   .querySelector(".lines");
+
 const passCheck = document.querySelector(".pass .pass-check");
+const confPassCheck = document.querySelector(".confpass .confpass-check")
 
 const lines = document.querySelector(".lines");
 const stats = document.querySelector(".status");
@@ -184,9 +186,11 @@ confPassword.addEventListener("input", (event) => {
   if (password.value.length > 0 && confPassword.value === password.value) {
     confPassReq.textContent = "OK";
     confPassReq.style.color = "hsl(211 18% 68%)";
+    confPassCheck.classList.add("is-visible");
   } else {
     confPassReq.textContent = "mismatch";
     confPassReq.style.color = "hsl(4 100% 74%)";
+    confPassCheck.classList.remove("is-visible");
   }
   validateConfirmPassword();
   updateReadyCounter();
