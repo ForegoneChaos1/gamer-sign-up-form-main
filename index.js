@@ -61,7 +61,7 @@ form.addEventListener("submit", (event) => {
   setTimeout(() => {
     form.hidden = true;
     if (provisionedCallsign) {
-      provisionedCallsign.textContent = callsign.value.trim();
+      provisionedCallsign.textContent = callSign.value.trim();
     }
     lockStatusRows();
     if (handshakeComplete) {
