@@ -92,7 +92,7 @@ callSign.addEventListener("input", () => {
     callSignWarning.style.color = "hsl(4 100% 74%)";
     callCheck.classList.remove("is-visible");
   }
-  updateReadyCounter()
+  updateReadyCounter();
 });
 
 mail.addEventListener("input", (event) => {
@@ -112,7 +112,7 @@ mail.addEventListener("input", (event) => {
     emailWarning.style.display = "flex";
     emailCheck.classList.remove("is-visible");
   }
-  updateReadyCounter()
+  updateReadyCounter();
 });
 
 password.addEventListener("input", (event) => {
@@ -267,7 +267,7 @@ checkbox.addEventListener("change", () => {
     termsWarn?.classList.remove("is-visible");
   } else {
     termReq.textContent = "required";
-    termReq.style.color = "hsl(210 18% 42%)";
+    termReq.style.color = "hsl(4 100% 74%)";
   }
 
   updateReadyCounter();
@@ -278,14 +278,14 @@ const statusElements = [userReq, emailReq, passReq, confPassReq, termReq];
 
 function updateReadyCounter() {
   const readyCount = statusElements.filter(
-    (el) => el && el.textContent.trim().toUpperCase() === "OK"
+    (el) => el && el.textContent.trim().toUpperCase() === "OK",
   ).length;
 
   console.log(
     "Statuses:",
     statusElements.map((el) => el && el.textContent.trim()),
     "Ready:",
-    readyCount
+    readyCount,
   );
 
   if (!readyCountEl) return;
